@@ -36,6 +36,7 @@ export const ProductTable = styled.table`
     color: #999;
     text-align: left;
     padding: 12px;
+    text-transform: uppercase;
   }
 
   tbody td {
