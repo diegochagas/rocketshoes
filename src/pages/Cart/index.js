@@ -27,7 +27,12 @@ function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
           </tr>
         </thead>
         <tbody>
-        { cart.map(product => (
+        { cart.length === 0 ?
+          (
+            <tr>
+              <td className="empty" colSpan="5">Cart is empty</td>
+            </tr>
+          ) :  cart.map(product => (
           <tr key={product.id}>
             <td>
               <img src={product.image} alt={product.title} />
@@ -68,7 +73,7 @@ function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
       </ProductTable>
 
       <footer>
-        <button type="button">Finish order</button>
+        <button type="button" disabled={!cart.length}>Finish order</button>
 
         <Total>
           <span>Total</span>

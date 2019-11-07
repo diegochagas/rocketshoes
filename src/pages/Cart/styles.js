@@ -25,6 +25,10 @@ export const Container = styled.div`
       &:hover {
         background: ${darken(0.03, '#7159c1')};
       }
+
+      &[disabled] {
+        background-color: #ddd;
+      }
     }
   }
 `;
@@ -42,6 +46,10 @@ export const ProductTable = styled.table`
   tbody td {
     padding: 12px;
     border-bottom: 1px solid #eee;
+
+    &.empty {
+      text-align: center;
+    }
   }
 
   img {
